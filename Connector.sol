@@ -51,7 +51,7 @@ contract DydxInterface {
     }
     
     
-    function operate(Info[] calldata accounts, ActionArgs[] calldata actions) external;
+    function operate(Info[] memory accounts, ActionArgs[] memory actions) public;
         
 }
 
