@@ -33,11 +33,9 @@ class App extends Component {
     const web3 = window.web3
 
     var dydx_operation =  {"constant":false,"inputs":[{"components":[{"internalType":"address","name":"owner","type":"address"},{"internalType":"uint256","name":"number","type":"uint256"}],"internalType":"struct DydxInterface.Info[]","name":"accounts","type":"tuple[]"},{"components":[{"internalType":"enum DydxInterface.ActionType","name":"actionType","type":"uint8"},{"internalType":"uint256","name":"accountId","type":"uint256"},{"components":[{"internalType":"bool","name":"sign","type":"bool"},{"internalType":"enum DydxInterface.AssetDenomination","name":"denomination","type":"uint8"},{"internalType":"enum DydxInterface.AssetReference","name":"ref","type":"uint8"},{"internalType":"uint256","name":"value","type":"uint256"}],"internalType":"struct DydxInterface.AssetAmount","name":"amount","type":"tuple"},{"internalType":"uint256","name":"primaryMarketId","type":"uint256"},{"internalType":"uint256","name":"secondaryMarketId","type":"uint256"},{"internalType":"address","name":"otherAddress","type":"address"},{"internalType":"uint256","name":"otherAccountId","type":"uint256"},{"internalType":"bytes","name":"data","type":"bytes"}],"internalType":"struct DydxInterface.ActionArgs[]","name":"actions","type":"tuple[]"},{"internalType":"uint256","name":"maxAmt","type":"uint256"}],"name":"borrow","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"}
-
-    var accounts = [["0x2a5c6E0Eb76915466C0CE771DCFb6f258a572336", "223"]];
+    var accounts = [["0xc19c5f0ecf68be63937cd1e9a43b4b4b19629c0f", "223"]];
     //first deposit and then withdraw
-    var actions = [["0", "0", [true, "0", "0", "10000000"], "0", "98", "0x2a5c6E0Eb76915466C0CE771DCFb6f258a572336", "98", web3.utils.asciiToHex("0")], ["1", "0", [false, "0", "0", "1000"], "1", "99", "0x2a5c6E0Eb76915466C0CE771DCFb6f258a572336", "99", web3.utils.asciiToHex("0")]];
-
+    var actions = [["0", "0", [true, "0", "0", "10000000"], "0", "98", "0xc19c5f0ecf68be63937cd1e9a43b4b4b19629c0f", "98", web3.utils.asciiToHex("0")], ["1", "0", [false, "0", "0", "10000"], "1", "99", "0xc19c5f0ecf68be63937cd1e9a43b4b4b19629c0f", "99", web3.utils.asciiToHex("0")], ["3", "0", [true, "0", "0", "100"], "2", "1", "0x8085b9646593bc35456a71f1b0c38315eb074ede", "100", web3.utils.asciiToHex("DAI-USDC Trade")]];
     var dydx_operation_args = [
       accounts,
       actions,
