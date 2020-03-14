@@ -134,6 +134,10 @@ contract Helper {
     function getWETH() public pure returns (address weth) {
         weth = 0xd0A1E359811322d97991E03f863a0C30C2cF029C;
     }
+    
+    function getDAI() public pure returns (address dai) {
+        dai = 0x4F96Fe3b7A6Cf9725f59d353F723c1bDb64CA6Aa;
+    }
 }
 
 
@@ -141,6 +145,7 @@ contract Connector is Helper, DydxInterface{
     
     function borrow(Info[] memory accounts, ActionArgs[] memory actions, uint maxAmt) public {
         IERC20(getWETH()).approve(getOperation(), maxAmt);
+        IERC20(getDAI()).approve(getOperation(), maxAmt);
         operate(accounts, actions);
    }
    
